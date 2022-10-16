@@ -4,7 +4,9 @@ A simple messenger backend with Node.js and Typescript
 ## Pre-requisites
 * Node version: > 10.9.1, 16.18.0 recommended
   * [Use this link to install](https://nodejs.org/en/download/)
-* Postman: free app used for testing API
+* PostgresQL: database
+  * [PostgreSQL](https://www.postgresql.org/)
+* Postman: free app used for testing API (not necessary, but visually easier to read than curl)
   * [Postman download link](https://www.postman.com/downloads/)
   
 ## Set-up
