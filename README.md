@@ -17,12 +17,14 @@ A simple messenger backend with Node.js and Typescript
 * Run `npm run dev` - starts the API
 
 ## Using the API
-Currently the API can be tested using Postman.
+Currently the API can be tested using Postman or by sending a curl command.
 * To get all messages in the database from the last 30 days, make a `GET` request to `http://localhost:3000/messages`. No params or body are necessary.
+  * Curl: `curl -v http://localhost:3000/messages` 
 
 ![Screen Shot 2022-10-15 at 11 31 02 PM](https://user-images.githubusercontent.com/55030317/196019766-623547ae-ee86-4e1e-88f8-7e9214f03e88.png)
 
 * To get all messages from a specific sender sent to a specific recipient in the last 30 days, make a `GET` request to `http://localhost:3000/messages/:recipient_id` (substituting the id number for `:recipient_id`), with a body containing a JSON of a sender_id (ex: `{"sender_id": 1}`).
+  * Curl: `curl -X GET -H "Content-Type: application/json" -d '{"sender_id": 1}' http://localhost:3000/messages/2`
 
 ![Screen Shot 2022-10-15 at 11 30 19 PM](https://user-images.githubusercontent.com/55030317/196019723-d98545c7-99db-44a1-bc26-ca50a6da7dfd.png)
 
@@ -31,6 +33,7 @@ Currently the API can be tested using Postman.
     "recipient_id": 2,
     "message_text": "This is another new message"
 }`).
+  * Curl: `curl -X POST -H "Content-Type: application/json" -d '{"sender_id": 1, "recipient_id": 3, "message_text": "Curl message"}' http://localhost:3000/messages`
 
 ![Screen Shot 2022-10-15 at 11 33 50 PM](https://user-images.githubusercontent.com/55030317/196019909-1a309274-8c4d-4069-862f-9e65688b9ee2.png)
 
