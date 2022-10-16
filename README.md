@@ -48,7 +48,8 @@ Currently the API can be tested using Postman or by sending a curl command.
  * Create database factories and replace migrations/seeding in tests with using those factories to create on-demand users and messages. Right now, the migrations don't always work, and you have to drop the db between sessions manually. Factories would also enable more precise tests, like making sure exactly the message you want has been sent, and being able to query the db for specific users.
  * Add REST routes/controllers for the users table to enable user creation and authentication. 
  * Add UPDATE and DELETE to the messages routes/controllers.
- * Implement a Promise library like Axios for the requests, using `async await` rather than `.then`. 
+ * Implement a Promise library like Axios for the requests, using `async await` rather than `.then`.
+ * Implement better error handling and HTTP status responses on the controller methods. 
 
 ## Libraries Used
 * [PostgreSQL](https://www.postgresql.org/)
