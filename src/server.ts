@@ -1,10 +1,12 @@
 import express, {Express} from 'express';
 import * as bodyParser from 'body-parser';
+import messageRouter from './routes/messages'
 
 const app: Express = express()
 const port = process.env.port || 3000;
 
 app.use(bodyParser.json());
+app.use(messageRouter)
 
 /** Error handling */
 app.use((req, res, next) => {
