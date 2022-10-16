@@ -3,15 +3,6 @@ import {Request, Response} from 'express'
 
 const database = knex
 
-interface Message {
-  id: number;
-  senderId: number;
-  recipientId: number;
-  messageText: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
 const todaysDate = new Date()
 const thirtyDaysAgo = new Date(new Date().setDate(todaysDate.getDate() - 30))
 
