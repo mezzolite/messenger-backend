@@ -34,17 +34,14 @@ Currently the API can be tested using Postman.
 
 ![Screen Shot 2022-10-15 at 11 33 50 PM](https://user-images.githubusercontent.com/55030317/196019909-1a309274-8c4d-4069-862f-9e65688b9ee2.png)
 
-  
+## Testing the API code using Jest
+* Run `createdb messenger_test` - creates postgresql test database
+* Run `npm run test`
 
-TODOs: 
- * production connection to DB
- * fix tests, create and drop test db automatically
+## Future improvements: 
+ * Currently, the API is set up mostly for a local, development connection. In the future, the API will need to have environmental variables and configuration set up for running in production mode. 
+ * Create database factories and replace migrations/seeding in tests with using those factories to create on-demand users and messages. Right now, the migrations don't always work, and you have to drop the db between sessions manually. Factories would also enable more precise tests, like making sure exactly the message you want has been sent, and being able to query the db for specific users.
+ * Add REST routes/controllers for the users table to enable user creation and authentication. 
+ * Add UPDATE and DELETE to the messages routes/controllers.
+ * Implement a Promise library like Axios for the requests, using `async await` rather than `.then`. 
 
-
-Steps: 
-npm install
-
-
-createdb messenger_db
-npx knex migrate:latest
-npx knex seed:run
